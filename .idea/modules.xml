@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BinDay.iml" filepath="$PROJECT_DIR$/.idea/BinDay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Bin_Day.iml" filepath="$PROJECT_DIR$/.idea/modules/Bin_Day.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Bin_Day.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Bin_Day.app.iml" />
     </modules>
   </component>
 </project>
