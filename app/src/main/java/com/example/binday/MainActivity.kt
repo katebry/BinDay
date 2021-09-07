@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         whichBinBtn.setOnClickListener {
 
+            // todo: TDD on below function
             fun nextWeeksBins(date: String): String {
                 val nextWeek = "Sep 14 2021"
                 return if (date > nextWeek) "Brown and Pink" else "Blue and Pink"
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 return nextWeeksBins(currentDate)
             }
 
-
+            // todo: change this from a Toast to actually display the text
             Toast.makeText(this@MainActivity, findDate(), Toast.LENGTH_LONG).show()
         }
     }
