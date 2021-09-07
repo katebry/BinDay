@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
 
             Toast.makeText(this@MainActivity, findDate(), Toast.LENGTH_LONG).show()
-            Toast.makeText(this@MainActivity, "Put out x and y bins.", Toast.LENGTH_LONG).show()
         }
     }
 }
