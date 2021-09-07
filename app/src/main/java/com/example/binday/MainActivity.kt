@@ -16,11 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         whichBinBtn.setOnClickListener {
             // todo: TDD / make utils function for below
-            val date = Calendar.getInstance().time
-            val formatter = SimpleDateFormat.getDateTimeInstance()
-            val formattedDate = formatter.format(date)
+            fun findDate(): String {
+                val date = Calendar.getInstance().time
+                val formatter = SimpleDateFormat.getDateTimeInstance()
 
-            Toast.makeText(this@MainActivity, formattedDate, Toast.LENGTH_LONG).show()
+                return formatter.format(date)
+            }
+
+            Toast.makeText(this@MainActivity, findDate(), Toast.LENGTH_LONG).show()
             Toast.makeText(this@MainActivity, "Put out the x and y bins.", Toast.LENGTH_LONG).show()
         }
     }
