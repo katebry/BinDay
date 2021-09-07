@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +15,12 @@ class MainActivity : AppCompatActivity() {
         val whichBinBtn = findViewById<Button>(R.id.btn_whichBin)
 
         whichBinBtn.setOnClickListener {
-            // your code to perform when the user clicks on the button
+            // todo: TDD / make utils function for below
+            val date = Calendar.getInstance().time
+            val formatter = SimpleDateFormat.getDateTimeInstance()
+            val formattedDate = formatter.format(date)
+
+            Toast.makeText(this@MainActivity, formattedDate, Toast.LENGTH_LONG).show()
             Toast.makeText(this@MainActivity, "Put out the x and y bins.", Toast.LENGTH_LONG).show()
         }
     }
