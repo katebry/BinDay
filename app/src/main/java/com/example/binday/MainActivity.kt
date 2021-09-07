@@ -15,16 +15,24 @@ class MainActivity : AppCompatActivity() {
         val whichBinBtn = findViewById<Button>(R.id.btn_whichBin)
 
         whichBinBtn.setOnClickListener {
-            // todo: TDD / make utils function for below
+
+            fun nextWeeksBins(date: String): String {
+                val nextWeek = "Sep 14 2021"
+                return if (date > nextWeek) "Brown and Pink" else "Blue and Pink"
+            }
+
+            // todo: TDD on below function
             fun findDate(): String {
                 val date = Calendar.getInstance().time
                 val formatter = SimpleDateFormat.getDateTimeInstance()
+                val currentDate = formatter.format(date)
 
-                return formatter.format(date)
+                return nextWeeksBins(currentDate)
             }
 
+
             Toast.makeText(this@MainActivity, findDate(), Toast.LENGTH_LONG).show()
-            Toast.makeText(this@MainActivity, "Put out the x and y bins.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, "Put out x and y bins.", Toast.LENGTH_LONG).show()
         }
     }
 }
