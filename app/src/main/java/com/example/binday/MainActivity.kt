@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,25 +13,12 @@ class MainActivity : AppCompatActivity() {
 
         val whichBinBtn = findViewById<Button>(R.id.btn_whichBin)
 
+        val getBinDates = DateLogic()
+
         whichBinBtn.setOnClickListener {
 
-            // todo: TDD on below function
-            fun nextWeeksBins(date: String): String {
-                val nextWeek = "Sep 14 2021"
-                return if (date > nextWeek) "Brown and Pink" else "Blue and Pink"
-            }
-
-            // todo: TDD on below function
-            fun findDate(): String {
-                val date = Calendar.getInstance().time
-                val formatter = SimpleDateFormat.getDateTimeInstance()
-                val currentDate = formatter.format(date)
-
-                return nextWeeksBins(currentDate)
-            }
-
             // todo: change this from a Toast to actually display the text
-            Toast.makeText(this@MainActivity, findDate(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, getBinDates.findDate(), Toast.LENGTH_LONG).show()
         }
     }
 }
