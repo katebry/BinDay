@@ -1,5 +1,6 @@
 package com.example.binday
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         val getBinDates = DateLogic()
 
         whichBinBtn.setOnClickListener {
-
+            val intent = Intent(this, BinData::class.java)
+            startActivity(intent)
             // todo: change this from a Toast to actually display the text
             Toast.makeText(this@MainActivity, getBinDates.findDate(), Toast.LENGTH_LONG).show()
         }
